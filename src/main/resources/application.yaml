@@ -3,15 +3,17 @@ server:
 spring:
    profiles:
       active: dev
+   application:
+      name: register-center
 
 eureka:
    instance:
-      service-hostname: localhost
+      hostname: localhost
    client:
       register-with-eureka: false #不要向注册中心注册自己
       fetch-registry: false #禁止检索服务
       service-url:
-         defaultZone: http://${eureka.instance.service-hostname}:${server.port}/eureka
+         defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
 
 
 
